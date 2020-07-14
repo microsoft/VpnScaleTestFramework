@@ -1,0 +1,4 @@
+fetch_script.sh http://dropshare/scripts bootstrap_container.sh 83a63d63b574b3633263c7f3d1e65b0e970121d6c1eae6498b9db55e179240f5ebeb38280dc4dc323cb40efb96cbc7a58f76e9392036669914f0ebd302710c69
+./bootstrap_container.sh http://dropshare/drops tunnel.tgz c1c47cb43fe21886f8666f696e63046a95f797d14a1c92bff2a7a751376e1666d9e0ae9379018752cf2fbdac07632600285eaae839eebc161074c6f5ea03a379
+./launch_tunnel.sh http://controller:8080 sha256:4d7bce28af155fd9d221e7d6118a562d65d922be36aac681076a41f7a87288ba 10.191.254.64 0 300 tunnel_oc.sh
+cat connect.log

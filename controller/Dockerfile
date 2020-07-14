@@ -21,6 +21,7 @@ apt-get update
 # Install the runtime dependencies
 RUN apt update && apt install -y ${RUN_DEPS} && apt autoremove && apt clean
 
+COPY helpers/bin/ /usr/local/bin
 COPY bin/Debug/netcoreapp3.1/linux-x64/publish/ /usr/local/bin
 
 WORKDIR /usr/local/bin

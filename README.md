@@ -11,11 +11,17 @@ The VPN Scale Test Framework consists of the following parts. The first is an .N
 
 ### Launch the Test Controller Container
 
-```docker run -it --rm VpnScaleTestController:latest```
+```docker run -it --rm vpnscaletest_controller:latest```
 
-### Launch an instance of the Test Agent Container
+### Generate a root cert and a signing cert
 
-```docker run -it --rm VpnScaleTestAgent:latest [base url of controller] [Root Certificate]```
+See openssl docs
+
+### Create Test Agent Container
+
+1) Save the docker image: ```docker save -o agent.tar  vpnscaletest_agent:latest```
+2) Copy agent.tar to a HTTP root
+3) Run bootstap command on each vm: ```boostrap_vm.sh $test_controller $drop_server agent.tar $(docker image ls | grep vpnscaletest_agent | awk '{print $3}')```
 
 Repeat accross one or more test VMs until there are enough clients.
 
